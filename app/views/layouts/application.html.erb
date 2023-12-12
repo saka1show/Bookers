@@ -12,7 +12,11 @@
 
   <body>
     <% flash.each do |message_type, message| %>
-      <div class="flash-message <%= message_type %>"><%= message %></div>
+      <% if message_type == :error %>
+        <div class="error-message"><%= message %></div>
+      <% else %>
+        <div class="flash-message <%= message_type %>"><%= message %></div>
+      <% end %>
     <% end %>
     <%= yield %>
   </body>

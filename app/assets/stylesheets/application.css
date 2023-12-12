@@ -28,9 +28,82 @@ body {
   margin: 33px;
 }
 
-p, a {
+h1 {
+  margin: 17px 0;
+}
+
+h2 {
+  margin: 17px 0;
+}
+
+.label {
+  background-color: #fff;
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 18px;
+  margin-top: 5px;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+p {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
   margin: 33px;
+}
+
+a {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 2px;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+tr {
+  width: auto;
+}
+
+th {
+  padding-bottom: 5px;
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+}
+
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+form {
+  display: block;
+}
+
+.error-message.error {
+  border-radius: 5px;
+  margin: 16px 0px;
+  color: red;
+}
+
+span.error {
+  color: red;
+}
+
+.flash-message.notice {
+  border-radius: 5px;
+  padding: 16px 24px;
+  margin: 16px 0px;
+  color: green;
 }
