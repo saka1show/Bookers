@@ -1,14 +1,5 @@
 <h1>Books</h1>
 
-<% if @book.errors.any? %>
-  <%= @book.errors.count %>errors prohibited this book from being saved:
-  <ur>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ur>
-<% end %>
-
 <ul>
   <div class="book-wrap">
     <div class="book-commnet">
@@ -34,7 +25,7 @@
 <h2>New book</h2>
 <% if @book.errors.any? %>
   <div style="border: 3px solid red; padding: 10px;">
-    <span class="error"><%= @book.errors.count %>errors prohibited this book from being saved:</span>
+    <span class="error"><%= @book.errors.count %> errors prohibited this book from being saved:</span>
     <hr style="margin: 5px;">
     <ur>
       <% @book.errors.full_messages.each do |message| %>
@@ -45,13 +36,13 @@
 <% end %>
 
 <div class="form">
-<%= form_with model: Book.new do |f| %>
+<%= form_with model: @book do |f| %>
   <div class="label">Title</div>
   <%= f.text_field :title %>
 
   <div class="label">Body</div>
   <%= f.text_area :body %>
-</div>
 
-  <%= f.submit 'Create Book' %>
+  <div><%= f.submit 'Create Book' %></div>
 <% end %>
+</div>
