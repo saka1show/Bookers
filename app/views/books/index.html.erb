@@ -1,4 +1,14 @@
 <h1>Books</h1>
+
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>errors prohibited this book from being saved:
+  <ur>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ur>
+<% end %>
+
 <ul>
   <div class="book-wrap">
     <div class="book-commnet">

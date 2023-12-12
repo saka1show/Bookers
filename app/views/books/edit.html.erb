@@ -1,5 +1,17 @@
 <h1>Editing Book</h1>
 
+<% if @book.errors.any? %>
+  <div style="border: 3px solid red; padding: 10px;">
+    <span class="error"><%= @book.errors.count %>errors prohibited this book from being saved:</span>
+    <hr style="margin: 5px;">
+    <ur>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ur>
+  </div>
+<% end %>
+
 <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 
   <div class="field">

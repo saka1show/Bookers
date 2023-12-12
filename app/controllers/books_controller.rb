@@ -9,8 +9,8 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully created."
       redirect_to book_path(@book.id)
     else
-      flash.now[:error] = "Error: Book cloud not be saved."
       @books = Book.all
+      flash.now[:error]
       render :index
     end
   end
@@ -26,15 +26,16 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
+    @book ||= Book.new
   end
 
   def update
-    book = Book.find(params[:id])
-    if book.update(book_params)
+    @book = Book.find(params[:id])
+    if @book.update(book_params)
       flash[:notice] = "Book was successfully updated."
       redirect_to book_path(book.id)
     else
-      flash.now[:notice] = "Error: Book cloud not be updated."
+      flash.now[:error]
       render :edit
     end
   end
@@ -45,7 +46,7 @@ class BooksController < ApplicationController
       flash[:notice] = "Book was successfully destroyed."
       redirect_to '/books'
     else
-      flash.now[:notice] = "Error: Book cloud not be destroyed."
+      flash.now[:error]
       render :books
     end
   end
